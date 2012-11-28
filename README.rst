@@ -12,7 +12,7 @@ Tasks from coordinator must be sent as dicts:
 .. code:: python
 
     {
-        'report_id': 1,
+        'push_id': 1,
         'owner_name': 'alfredhq',
         'repo_name': 'alfred',
         'hash': '0680c2c0346672a89c145c8de095e2adda2766c8',

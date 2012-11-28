@@ -11,13 +11,13 @@ config = {
 
 tasks = (
     {
-        'report_id': 1,
+        'push_id': 1,
         'owner_name': 'alfredhq',
         'repo_name': 'alfred-db',
         'hash': 'dfe23abc',
     },
     {
-        'report_id': 2,
+        'push_id': 2,
         'owner_name': 'alfredhq',
         'repo_name': 'alfred',
         'hash': 'be23c3fa',

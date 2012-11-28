@@ -5,7 +5,7 @@ from msgpack import packb
 
 
 task = {
-    'report_id': 1,
+    'push_id': 1,
     'owner_name': 'alfredhq',
     'repo_name': 'alfred',
     'hash': 'ef45bc4e',

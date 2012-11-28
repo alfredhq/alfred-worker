@@ -9,16 +9,16 @@ def run_worker(task, config):
     for address in config['collectors']:
         socket.connect(address)
 
-    report_id = task['report_id']
+    push_id = task['push_id']
     try:
         for data in analyze(task, config.get('clones_root')):
-            msg = msgpack.packb([report_id, 'fix', data])
+            msg = msgpack.packb([push_id, 'fix', data])
             socket.send(msg)
     except Exception as e:
         error = str(e)
     else:
         error = None
-    msg = msgpack.packb([report_id, 'finish', error])
+    msg = msgpack.packb([push_id, 'finish', error])
     socket.send(msg)
 
     socket.close()
