@@ -91,6 +91,7 @@ class RunWorkerTests(unittest.TestCase):
     def test_sends_all_fixes_to_collectors(self):
         run_worker(task, config)
         self.socket.send.assert_has_calls([
+            mock.call(packb([1, 'start', None])),
             mock.call(packb([1, 'fix', {'description': 'description 1'}])),
             mock.call(packb([1, 'fix', {'description': 'description 2'}])),
             mock.call(packb([1, 'finish', None]))

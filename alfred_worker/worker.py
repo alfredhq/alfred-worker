@@ -10,6 +10,9 @@ def run_worker(task, config):
         socket.connect(address)
 
     push_id = task['push_id']
+    msg = msgpack.packb([push_id, 'start', None])
+    socket.send(msg)
+
     try:
         for data in analyze(task, config.get('clones_root')):
             msg = msgpack.packb([push_id, 'fix', data])
